@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 14:09:54 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/07 12:24:30 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/06/07 14:32:59 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/06/07 14:33:04 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-//#include "ft_get_next_line.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 1024
 
-int	get_next_line(const int fd, char **line)
-{
+# include "libft/libft.h"
+# include <unistd.h>
+# include <fcntl.h>
 
+int	get_next_line(const int fd, char **line);
 
-
-
-
-
-
-}
-int	main()
-{
-	ft_putchar('G');
-	return (0);
-}
+#endif
