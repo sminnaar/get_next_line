@@ -1,0 +1,9 @@
+*.swp
+*.DS_Store
+*.swo
+*.[oa]
+*atom*
+utils/
+Libftest/
+*.out
+Libftest-master/
