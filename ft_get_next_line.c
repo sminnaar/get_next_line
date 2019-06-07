@@ -6,12 +6,12 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 14:09:54 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/07 10:44:52 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/06/07 12:24:30 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-#include "get_next_line.h"
+//#include "ft_get_next_line.h"
 
 int	get_next_line(const int fd, char **line)
 {
@@ -21,4 +21,10 @@ int	get_next_line(const int fd, char **line)
 
 
 
+
+}
+int	main()
+{
+	ft_putchar('G');
+	return (0);
 }
