@@ -1,0 +1,4 @@
+Geting next line is harder than I thought'\n'
+This is the second line of the second test file'\n'
+And the third line of Test file 2'\n'
+Getting to EOF of Test file 2

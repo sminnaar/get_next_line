@@ -1,0 +1,4 @@
+Geting next line is hard'\n'
+This is the second line'\n'
+And the third'\n'
+Getting to EOF

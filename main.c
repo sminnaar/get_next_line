@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/07 14:32:59 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/11 09:51:55 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/06/14 11:38:26 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/06/14 13:17:09 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 32
+#include "get_next_line.h"
+#include "libft/libft.h"
 
-# include "libft/libft.h"
-# include <unistd.h>
-# include <fcntl.h>
+int	get_next(const int fd, char **line);
 
-int	get_next_line(const int fd, char **line);
+int	main(argc, **argv)
+{
+	int fd;
+	int fd1;
+	char *line;
+	int i;
 
-#endif
+	fd	= read("Test.txt", buff, BUFF_SIZE);
+	fd1 = read("Test1.txt", buff, BUFF_SIZE);
+	i = get_next(fd, &line);
+	ft_putendl(*line);
+	i = get_next(fd1, &line);
+	ft_putendl(*line);
+}

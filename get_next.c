@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/07 14:32:59 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/11 09:51:55 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/06/11 11:48:12 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/06/14 13:06:13 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 32
+#include "libft/includes/libft.h"
 
-# include "libft/libft.h"
-# include <unistd.h>
-# include <fcntl.h>
+int	get_next(const int fd, char **line)
+{
 
-int	get_next_line(const int fd, char **line);
-
-#endif
