@@ -1,4 +1,4 @@
-Geting next line is hard'\n'
-This is the second line'\n'
-And the third'\n'
+Geting next line is hard
+This is the second line
+And the third
 Getting to EOF

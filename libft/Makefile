@@ -6,7 +6,7 @@
 #    By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/19 15:17:25 by sminnaar          #+#    #+#              #
-#    Updated: 2019/06/06 16:15:09 by sminnaar         ###   ########.fr        #
+#    Updated: 2019/06/22 16:53:02 by sminnaar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ NAME = libft.a
 
 OBJ_DIR = objs/
 
-SRC =	ft_atoi.c \
+SRC =	ft_dupdelstr.c \
+		ft_repnew.c \
+		ft_atoi.c \
 		ft_bzero.c \
 		ft_cntwrd.c \
 		ft_getchar.c \
