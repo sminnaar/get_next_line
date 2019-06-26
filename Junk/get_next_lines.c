@@ -14,6 +14,7 @@
 
 static int	line_check(char **line, char **tmp)
 {
+	ft_putstr("IT WORKS!!!");
 	char	*t_tmp;
 	char	*chr_tmp;
 	size_t	i;
@@ -25,16 +26,18 @@ static int	line_check(char **line, char **tmp)
 			return (0);
 	t_tmp = &chr_tmp[i];
 	*t_tmp = '\0';
-	*line = ft_strdup(*tmp);
-	*tmp = ft_strdup(t_tmp + 1);
+	ft_strcpy(*line, *tmp);
+	ft_strcpy(*tmp, (t_tmp + 1));
 	return (1);
+
+	//if cht_tmp = ft_memset(ft_strchr(*tmp, '\n'), '\0', 1);
+	
 }
 
 static int	reader(int fd, char *buffer, char **store, char **line)
 {
 	int		readret;
 	char	*tmp_s;
-
 	while ((readret = read(fd, buffer, BUFF_SIZE)) > 0)
 	{
 		buffer[readret] = '\0';
@@ -61,10 +64,16 @@ int	get_next_line(int const fd, char **line)
 	int			cnt;
 
 	if (!line || (fd < 0 || fd >= FD_MAX) || (read(fd, store[fd], 0) > 0) || !(buffer = (char *)ft_memalloc(sizeof(char) * BUFF_SIZE + 1)))
+	{
+		free(buffer);
 		return (-1);
+	}
 	if (store[fd])
 		if (line_check(line, &store[fd]))
+		{
+			free(buffer);
 			return (1);
+		}
 	cnt = 0;
 	while (cnt < BUFF_SIZE)
 		buffer[cnt++] = '\0';
@@ -77,7 +86,7 @@ int	get_next_line(int const fd, char **line)
 		return (readret);
 	}
 	*line = store[fd];
+	free(store[fd]);
 	store[fd] = NULL;
 	return (1);
 }
-

@@ -12,13 +12,9 @@
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 320 
-# define FD_MAX 255
-# define RET_VAL(readret) readret > 0 ? 1 : readret
+# define BUFF_SIZE 64 
 
-# include "libft/libft.h"
-# include <unistd.h>
-# include <fcntl.h>
+# include "libft/includes/libft.h"
 
 int	get_next_line(const int fd, char **line);
 

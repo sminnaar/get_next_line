@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft/includes/libft.h"
 #include "get_next_line.h"
 
 int	main(int argc,char **argv)
 {
 	int fd;
-	int fd1;
+	//int fd1;
 	char *line;
 	int i;
 	unsigned int cnt;
 
 	cnt = 1;
 	fd	= open(argv[1], O_RDONLY);
-	fd1 = open(argv[2], O_RDONLY);
+	//fd1 = open(argv[2], O_RDONLY);
 	ft_putstr("File discriptor: ");
 	ft_putnbr(fd);
 	ft_putchar('\n');
@@ -36,9 +36,12 @@ int	main(int argc,char **argv)
 		ft_putendl(line);
 		i = get_next_line(fd, &line);
 		cnt++;
+		free(line);
 	}
 	ft_putchar('\n');
-	ft_putstr("File discriptor: ");
+	return (0);
+}
+	/*ft_putstr("File discriptor: ");
 	ft_putnbr(fd1);
 	ft_putchar('\n');
 	i = get_next_line(fd1, &line);
@@ -51,9 +54,9 @@ int	main(int argc,char **argv)
 		ft_putendl(line);
 		i = get_next_line(fd1, &line);
 		cnt++;
-	}
-	return (0);
-}
+	}*/
+	//return (0);
+//}
 	/*ft_putstr("[1]");
 	ft_putendl(line);
 	get_next_line(fd, &line);
@@ -84,3 +87,39 @@ int	main(int argc,char **argv)
 	ft_putstr("[4]");
 	ft_putendl(line);
 }*/
+
+/*
+int main(void)
+{
+		
+	char 	*line = NULL;
+
+	FILE *file;
+	file = fopen("Test.txt", "r");
+
+	int ret = get_next_line(fileno(file), &line);
+	while (ret > 0)
+	{	
+		printf("line: %s\n", line);	
+		printf("ret: %d\n", ret);	
+	}
+	return (0);
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
