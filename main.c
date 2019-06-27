@@ -6,7 +6,7 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 11:38:26 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/27 15:56:28 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/06/27 17:03:18 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	main(int argc,char **argv)
 		ft_putendl(line);
 		i = get_next_line(fd, &line);
 		cnt++;
-		free(line);
+		//free(line);
 		ft_putendl("------------------------------------------------");
 	}
-	ft_putchar('\n');
+	//ft_putchar('\n');
 	return (0);
 }
 	/*ft_putstr("File discriptor: ");
