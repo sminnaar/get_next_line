@@ -6,7 +6,7 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 15:20:31 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/25 10:29:57 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/06/27 15:27:32 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+void				ft_nl(void);
 char				*ft_dupdelstr(char *s1);
 char				*ft_repnew(char *s, int c, int d);
 void				*ft_memset(void *b, int c, size_t len);
