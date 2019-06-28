@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 12:08:07 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/28 14:36:44 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/06/28 11:49:40 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/06/28 12:30:32 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include "libft/includes/libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+# define BUFF_SIZE 32
+
+typedef struct	s_line
 {
-	const char	cha;
-	char		*r_out;
+	char		*temp;
+	int			i;
+}				t_line;
+int				get_next_line(const int fd, char **line);
 
-	cha = (char)c;
-	r_out = NULL;
-	while (*s)
-	{
-		if (*s == cha)
-			r_out = (char*)s;
-		++s;
-	}
-	if (*s == cha)
-		return ((char*)s);
-	return (r_out);
-}
+#endif

@@ -6,13 +6,13 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 15:38:00 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/27 18:00:24 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/06/28 10:15:45 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*reader(int fd, char *buffer)
+static int	reader(int fd, char *buffer)
 {
 	char	*store;
 	char 	*tail;
@@ -33,10 +33,22 @@ static char	*reader(int fd, char *buffer)
 
 	}
 }
+static char	*chr_finder(int fd, *buffer, int readret)
+{
+	char	*tail;
+	char	*store;
+
+	if (readret == -1)
+		return (-1);
+
+
+
+
+}
 
 int	get_next_line(int const fd, char **line)
 {
-	char	buffer[BUFF_SIZE + 1];
+	char	buffer[BUFF_SIZE];
 	int		readret;
 
 	line = reader(fd, buffer);

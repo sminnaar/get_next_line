@@ -6,11 +6,13 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 11:38:26 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/28 17:05:13 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:22:20 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
+#include <fcntl.h>
 
 int	main(int argc,char **argv)
 {
@@ -36,9 +38,10 @@ int	main(int argc,char **argv)
 		ft_putendl(line);
 		i = get_next_line(fd, &line);
 		cnt++;
+		//free(line);
 		ft_putendl("------------------------------------------------");
 	}
-	close(fd);
+	//ft_putchar('\n');
 	return (0);
 }
 	/*ft_putstr("File discriptor: ");
