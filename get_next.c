@@ -6,7 +6,7 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 14:13:02 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/28 17:38:04 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/06/29 12:48:29 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ static int	reader(char **store, const int fd, char **line)
 	{
 		*line = *store;
 		*store = ft_strnew(1);
+		return (0);
 	}
-	return (rret);
+	return (1);
 }
 
 int			get_next_line(const int fd, char **line)
@@ -57,7 +58,7 @@ int			get_next_line(const int fd, char **line)
 	int			ret;
 
 	if (store[fd] == NULL)
-		store[fd] = ft_strnew(1);
+		store[fd] = ft_strnew(0);
 	if ((ret = reader(&store[fd], fd, line)) < 0)
 			return (-1);
 	if (ret < BUFF_SIZE && (!(ft_strlen(store[fd]))))
