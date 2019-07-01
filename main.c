@@ -6,7 +6,7 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 11:38:26 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/28 17:05:13 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/07/01 17:14:28 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc,char **argv)
 	i = get_next_line(fd, &line);
 	while (i > 0)
 	{
+		ft_putnbr(i);
 		ft_putstr("[");
 		ft_putnbr(cnt);
 		ft_putstr("] ");
@@ -38,6 +39,9 @@ int	main(int argc,char **argv)
 		cnt++;
 		ft_putendl("------------------------------------------------");
 	}
+	ft_putnbr(i);
+	ft_putstr("EOF");
+	free(line);
 	close(fd);
 	return (0);
 }
