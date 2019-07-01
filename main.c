@@ -6,7 +6,7 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 11:38:26 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/07/01 17:14:28 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/07/01 17:32:24 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,85 +45,3 @@ int	main(int argc,char **argv)
 	close(fd);
 	return (0);
 }
-	/*ft_putstr("File discriptor: ");
-	ft_putnbr(fd1);
-	ft_putchar('\n');
-	i = get_next_line(fd1, &line);
-	cnt = 1;
-	while (i > 0)
-	{
-		ft_putstr("[");
-		ft_putnbr(cnt);
-		ft_putstr("] ");
-		ft_putendl(line);
-		i = get_next_line(fd1, &line);
-		cnt++;
-	}*/
-	//return (0);
-//}
-	/*ft_putstr("[1]");
-	ft_putendl(line);
-	get_next_line(fd, &line);
-	ft_putstr("[2]");
-	ft_putendl(line);
-	get_next_line(fd, &line);
-	ft_putstr("[3]");
-	ft_putendl(line);
-	get_next_line(fd, &line);
-	ft_putstr("[4]");
-	ft_putendl(line);
-	get_next_line(fd, &line);
-	ft_putstr("[5]");
-	ft_putendl(line);
-	get_next_line(fd, &line);
-	ft_putstr("[6]");
-	ft_putendl(line);
-	i = get_next_line(fd1, &line);
-	ft_putstr("[1]");
-	ft_putendl(line);
-	get_next_line(fd1, &line);
-	ft_putstr("[2]");
-	ft_putendl(line);
-	get_next_line(fd1, &line);
-	ft_putstr("[3]");
-	ft_putendl(line);
-	get_next_line(fd1, &line);
-	ft_putstr("[4]");
-	ft_putendl(line);
-}*/
-
-/*
-int main(void)
-{
-		
-	char 	*line = NULL;
-
-	FILE *file;
-	file = fopen("Test.txt", "r");
-
-	int ret = get_next_line(fileno(file), &line);
-	while (ret > 0)
-	{	
-		printf("line: %s\n", line);	
-		printf("ret: %d\n", ret);	
-	}
-	return (0);
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

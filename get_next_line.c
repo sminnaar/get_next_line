@@ -6,7 +6,7 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/01 11:47:46 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/07/01 17:05:37 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/07/01 17:32:07 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	line_copy(char *buf, char *line)
 	size_t i;
 
 	i = 0;
-	while (line[i] != '\n' && line[i])
+	while (!(ft_strchr(line[i], '\n')) && line[i])
 		i++;
 	if (ft_strlen(line) > i + 1)
 		buf = ft_strcpy(buf, &(line[i + 1]));
