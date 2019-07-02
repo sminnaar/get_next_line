@@ -5,56 +5,68 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/28 11:17:34 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/06/28 11:47:48 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/07/01 11:47:46 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/07/02 17:53:28 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-	char	*readit(const int fd, char *str)
+static int	line_copy(const int fd, char **buf, char **line, int r)
+{
+	size_t	i;
+	char	*temp;
+
+	temp = buf[fd];
+	i = 0;
+	if ((ft_strchr(buf[fd], '\n')) == NULL && r == 0)
 	{
-		char	buf[BUFF_SIZE + 1];
-		int		i2;
-
-		if (fd < 0 || read(fd, buf, 0) < 0 || BUFF_SIZE < 1)
-			return (0);
-		str = (str == NULL) ? ft_strnew(1) : str;
-		while (!(ft_strchr(str, '\n')))
-		{
-			if ((i2 = read(fd, buf, BUFF_SIZE)) < 0)
-				return (0);
-			buf[i2] = '\0';
-			str = ft_strxjoin(str, buf, 1);
-			if (str[0] == '\0' || i2 == 0)
-				break ;
-		}
-		return (str);
+		*line = ft_strdup(buf[fd]);
+		return (0);
 	}
-
-	int		get_next_line(const int fd, char **line)
+	while (buf[fd][i] != '\n' && buf[fd][i])
+		i++;
+	if (ft_strlen(buf[fd]) > i + 1)
 	{
-		static char *str;
-		t_line		magic;
-
-		if (!(str = readit(fd, str)) || !line)
-			return (-1);
-		if ((magic.temp = ft_strchr(str, '\n')) > 0)
-		{
-			magic.i = magic.temp - str;
-			if (!(*line = ft_strndup(str, magic.i)))
-				return (-1);
-			str = ft_strdup(magic.temp + 1);
-			return (1);
-		}
-		else
-		{
-			if (!(*line = ft_strdup(str)))
-				return (-1);
-			free(str);
-			str = NULL;
-			if (*line[0] == '\0')
-				return (0);
-			return (1);
-		}
+		*line = ft_strndup(buf[fd], i);
+		buf[fd] = ft_strdup(buf[fd] + (i + 1));
 	}
+	if (temp)
+		ft_strdel(&temp);
+	return (1);
+}
+
+static int	reader(const int fd, char **buf, char **line)
+{
+	int		r;
+	char	*store;
+	char	buffer[BUFF_SIZE + 1];
+
+	if (!buf[fd])
+		buf[fd] = ft_strnew(0);
+	while (!(ft_strchr(buf[fd], '\n')) && (r = read(fd, buffer, BUFF_SIZE)) >= 0)
+	{
+		buffer[r] = '\0';
+		store = ft_strjoin(buf[fd], buffer);
+		ft_strdel(&buf[fd]);
+		buf[fd] = store; 
+		//ft_memdel((void**)&store);
+	}
+	if (r == 0)
+	{
+		*line = ft_strdup(buf[fd]);
+		return (0);
+	}
+	if (r >= 0 && buf[fd])
+		return (line_copy(fd, buf, line, r));
+	return (-1);
+}
+
+int			get_next_line(const int fd, char **line)
+{
+	static char	*buf[FD_MAX];
+
+	if (fd < 0 || fd > FD_MAX || read(fd, NULL, 0) < 0 || !line)
+		return (-1);
+	return (reader(fd, buf, line));
+}

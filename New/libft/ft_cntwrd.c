@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_cntwrd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/01 11:45:05 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/07/02 16:34:36 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/05/29 13:48:08 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/05/31 08:06:12 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 64
-# define FD_MAX 1024
+#include "libft.h"
 
-# include "libft/includes/libft.h"
-# include <fcntl.h>
+int	ft_cntwrd(const char *s, char c)
+{
+	size_t i;
+	size_t count;
 
-int	get_next_line(const int fd, char **line);
-
-#endif
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			count++;
+		while (s[i] && (s[i] != c))
+			i++;
+	}
+	return (count);
+}

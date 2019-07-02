@@ -6,7 +6,7 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/01 11:47:46 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/07/01 17:32:07 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/07/02 18:07:10 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	line_copy(char *buf, char *line)
 	size_t i;
 
 	i = 0;
-	while (!(ft_strchr(line[i], '\n')) && line[i])
+	while (line[i] != '\n' && line[i])
 		i++;
 	if (ft_strlen(line) > i + 1)
 		buf = ft_strcpy(buf, &(line[i + 1]));
@@ -28,11 +28,14 @@ static int	line_copy(char *buf, char *line)
 static int	reader(const int fd, char **buf, char **line)
 {
 	int		r;
+	char 	*store;
 
 	r = 1;
 	while (!(ft_strchr(*line, '\n')) && (r = read(fd, buf[fd], BUFF_SIZE)) > 0)
 	{
-		*line = ft_strjoin(*line, buf[fd]);
+		store = *line;
+		*line = ft_strjoin(store, buf[fd]);
+		free(store);
 		if (!*line)
 			return (-1);
 		ft_bzero(buf[fd], BUFF_SIZE);

@@ -6,7 +6,7 @@
 #    By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/19 15:17:25 by sminnaar          #+#    #+#              #
-#    Updated: 2019/07/02 16:07:10 by sminnaar         ###   ########.fr        #
+#    Updated: 2019/07/02 17:59:19 by sminnaar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = libft.a
 
 OBJ_DIR = objs/
 
-SRC = get_next_line.c
+SRC = get_next.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
@@ -52,7 +52,7 @@ del: fclean
 	@rm -f *.out
 
 c:
-	@gcc $(FLAG) main.c get_next_line.c libft/libft.a -g
+	@gcc $(FLAG) main.c get_next.c libft/libft.a -g
 
 .PHONY: all, clean, fclean, re, del, c
 

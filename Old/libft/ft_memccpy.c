@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/01 11:45:05 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/07/02 16:34:36 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/05/28 10:14:46 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/05/28 11:55:46 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 64
-# define FD_MAX 1024
+#include "libft.h"
 
-# include "libft/includes/libft.h"
-# include <fcntl.h>
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	char		*d;
+	const char	*s;
 
-int	get_next_line(const int fd, char **line);
-
-#endif
+	d = (char *)dst;
+	s = (char *)src;
+	while (n--)
+	{
+		*(d++) = *s;
+		if (*(s++) == (char)c)
+			return (d);
+	}
+	return (NULL);
+}
