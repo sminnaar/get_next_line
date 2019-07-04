@@ -6,7 +6,7 @@
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 11:38:26 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/07/01 17:32:24 by sminnaar         ###   ########.fr       */
+/*   Updated: 2019/07/04 16:58:50 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int	main(int argc,char **argv)
 		ft_putendl(line);
 		i = get_next_line(fd, &line);
 		cnt++;
-		ft_putendl("------------------------------------------------");
+		//ft_putendl("------------------------------------------------");
 	}
 	ft_putnbr(i);
-	ft_putstr("EOF");
+	ft_putendl("EOF");
 	free(line);
 	close(fd);
 	return (0);
