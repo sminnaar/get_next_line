@@ -33,8 +33,8 @@ $(OBJ_DIR) :
 	@mkdir -p $(OBJ_DIR)
 	@mkdir -p $(dir $(OBJ))
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	@gcc $(FLAG) -c $< -o $@ -I. 
+#$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	#@gcc $(FLAG) -c $< -o $@ -I. 
 
 clean:
 	@rm -f $(OBJ)

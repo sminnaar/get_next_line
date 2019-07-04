@@ -1,4 +1,0 @@
-Geting next line is hard
-This is the second line
-And the third
-Getting to EOF
