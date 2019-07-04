@@ -6,7 +6,7 @@
 #    By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/19 15:17:25 by sminnaar          #+#    #+#              #
-#    Updated: 2019/06/27 15:27:56 by sminnaar         ###   ########.fr        #
+#    Updated: 2019/07/04 14:38:36 by sminnaar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,9 @@ SRC =	ft_nl.c \
 		ft_bzero.c \
 		ft_cntwrd.c \
 		ft_getchar.c \
+		ft_getchar_fd.c \
+		ft_getstr.c \
+		ft_getstr_fd.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \

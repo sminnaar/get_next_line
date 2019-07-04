@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getchar.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 12:23:49 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/07/04 13:39:36 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/07/04 12:10:02 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/07/04 13:42:09 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
+#include <fcntl.h>
 
-char	ft_getchar(void)
+int	main(void)
 {
-	char c;
-	if (read(0, &c, 1) != 1)
-		return (-1);
-	else
-		return (c);
+	char *s;
+	int fd;
+
+	fd = open("New.txt", O_WRONLY);
+	s = ft_getstr_fd(fd);
+	write(fd, s, ft_strlen(s));
+	ft_putendl(s);
+	return (0);
 }

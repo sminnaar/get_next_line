@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getchar.c                                       :+:      :+:    :+:   */
+/*   ft_getstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 12:23:49 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/07/04 13:39:36 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/07/04 12:07:21 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/07/04 13:22:11 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_getchar(void)
+char	*ft_getstr(void)
 {
-	char c;
-	if (read(0, &c, 1) != 1)
-		return (-1);
-	else
-		return (c);
+	char	*s;
+	size_t	i;
+
+	s = ft_strnew(0);
+	i = 0;
+	while ((s[i] = ft_getchar()) != '\n')
+	{
+		i++;
+	}
+	s[i] = '\0';
+	return (s);
 }

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getchar.c                                       :+:      :+:    :+:   */
+/*   ft_getchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sminnaar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 12:23:49 by sminnaar          #+#    #+#             */
-/*   Updated: 2019/07/04 13:39:36 by sminnaar         ###   ########.fr       */
+/*   Created: 2019/07/04 13:38:18 by sminnaar          #+#    #+#             */
+/*   Updated: 2019/07/04 13:38:44 by sminnaar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_getchar(void)
+char	ft_getchar_fd(const int fd)
 {
 	char c;
-	if (read(0, &c, 1) != 1)
+	if (read(fd, &c, 1) != 1)
 		return (-1);
 	else
 		return (c);
